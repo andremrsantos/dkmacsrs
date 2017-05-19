@@ -19,10 +19,12 @@ code example bellow:
 
     ## Install required packages
     ## rustfmt
-    docker run --rm -v ${HOME}/.cargo:/root/.cargo dkmacsrs \
+    docker run --rm -v ${HOME}/.cargo:/root/.cargo \
+        andremrsantos/dkmacsrs \
         cargo install rustfmt
     ## racer
-    docker run --rm -v ${HOME}/.cargo:/root/.cargo dkmacsrs \
+    docker run --rm -v ${HOME}/.cargo:/root/.cargo \
+         andremrsantos/dkmacsrs \
         cargo install racer
 
     ## Running
@@ -30,7 +32,7 @@ code example bellow:
         -v ${HOME}/.gitconfig:/root/.gitconfig \
         -v ${HOME}/.cargo:/root/.cargo \
         -v ${PWD}:/workspace \
-        dkmacsrs
+        andremrsantos/dkmacsrs
 
 I've also mapped **.gitconfig** to the user folder to make easy
 to use the internal **git**.
@@ -44,7 +46,7 @@ Alternatively you can use a long-lived container, see code bellow:
         -name dkmacs \
         -v ${HOME}/.gitconfig:/root/.gitconfig \
         -v ${PWD}:/workspace \
-        dkmacsrs
+         andremrsantos/dkmacsrs
 
     ## on other windon install required packages
     docker exec dkmacs cargo install rustfmt
