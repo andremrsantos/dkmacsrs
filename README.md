@@ -1,4 +1,4 @@
-# DKmacsGO - Emacs with Rust
+# DKmacsRS - Emacs with Rust
 
 This container provides the popular **emacs** editor running on an
 interactive and isolated container with full **rust** developing
