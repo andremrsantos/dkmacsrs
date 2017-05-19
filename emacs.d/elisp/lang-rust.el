@@ -1,5 +1,18 @@
 ;; rust-mode, racer, cargo
 
+;; install packages
+;; list the packages you want
+(setq package-list '(rust-mode racer cargo flycheck-rust))
+
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
 ;; rust-mode
 ;; https://github.com/rust-lang/rust-mode
 (use-package rust-mode
